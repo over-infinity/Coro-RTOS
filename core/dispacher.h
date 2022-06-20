@@ -25,3 +25,21 @@
  */
 
 /* dispacher.h */
+
+#include <coroutine>
+#include <list>
+
+#include "task.h"
+
+
+class Dispacher{
+  
+public:
+  void addTask(Task* task);
+  void start();
+  
+private:
+  std::list<Task*> TaskList;
+  
+  
+};
