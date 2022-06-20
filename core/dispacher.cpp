@@ -25,3 +25,27 @@
  */
 
 /* dispacher.cpp */
+
+#include "task.h"
+
+void Dispacher::addTask(Task* task){
+  TaskList.push_back(task);  
+}
+
+void Dispacher::start(){
+  
+  while(true){
+    
+    if(TaskList.empty())
+      break;
+    
+    Task* t=TaskList.front();
+    TaskList.pop_front();
+    
+    if(!t->done())
+      t->resume();
+    
+    if(!t->done())
+      TaskList.push_back(t);  
+  }  
+}
