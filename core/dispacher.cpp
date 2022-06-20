@@ -26,7 +26,7 @@
 
 /* dispacher.cpp */
 
-#include "task.h"
+#include "dispacher.h"
 
 void Dispacher::addTask(Task* task){
   TaskList.push_back(task);  
